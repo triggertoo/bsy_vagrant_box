@@ -9,8 +9,11 @@ class ddd {
     package { "ddd":
         ensure => present
     }
+	
+    package { "make":
+        ensure => present
+    }
 }
-
 
 class groups {
     group { "puppet":
