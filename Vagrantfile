@@ -15,7 +15,7 @@ Vagrant::Config.run do |config|
     main_config.vm.forward_port 3306, 13307
     main_config.vm.forward_port 80, 8080
     main_config.vm.share_folder "v-root", "/vagrant", ".", :nfs => !Kernel.is_windows?
-    main_config.vm.provision :puppet, :module_path => "puppet/modules" do |puppet|
+    main_config.vm.provision :puppet do |puppet|
       puppet.manifests_path = "puppet/manifests"
       puppet.manifest_file = "main.pp"
     end
