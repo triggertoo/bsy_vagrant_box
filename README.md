@@ -15,3 +15,8 @@ Open ddd debug with X11 forwarding
 Connect to the box
 
 	vagrant ssh
+	
+For mountain lion users:
+
+you need to install x11 to use x11 forwarding
+http://xquartz.macosforge.org/landing/
