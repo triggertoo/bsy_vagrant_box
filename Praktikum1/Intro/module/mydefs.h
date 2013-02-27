@@ -18,8 +18,10 @@
 
   /* externe Typen, Konstanten, Macros und globale Variablen-Deklarationen */
 
-   typedef float my_float;
+   typedef double my_float;
 
-#define my_pi 3.14
+#include <math.h>
+
+#define my_pi M_PI 
 
 #endif

@@ -31,7 +31,7 @@ int main(void)
     F = flaeche(R);
     U = umfang(R);
     V = kugelvolumen(R);
-    printf("\n Radius =\t%f \n Flaeche =\t%f \n Umfang =\t%f\n Volumen=\t%f\n", R , F, U, V);
+    printf("\n Radius =\t%lf \n Flaeche =\t%lf \n Umfang =\t%lf\n Volumen=\t%lf\n", R , F, U, V);
     getchar(); getchar();                       /* dummy input -> warte hier */
     exit(0);
 }
@@ -42,7 +42,7 @@ int main(void)
 void eingabe(my_float *x)
 {
     printf("\n Kreisberechnung; Radius = ? ");
-    scanf("%f", x);
+    scanf("%lf", x);
 }
 
 /*----------------------------------------------------------------------------*/
