@@ -6,7 +6,7 @@
 # ---------------------------------------------------------------------------
 #macros
 CC    = gcc -std=gnu99
-CFLGS = -g -Wall
+CFLGS = -pg -Wall
 
 doit:
 		make --no-print-directory test1

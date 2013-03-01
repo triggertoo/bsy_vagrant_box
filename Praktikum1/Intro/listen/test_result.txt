@@ -1,0 +1,90 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ns/call  ns/call  name    
+ 95.44      6.74     6.74  8430551   799.22   802.39  mlSortIn
+  1.85      6.87     0.13 16777216     7.77     7.77  mlDequeue
+  1.56      6.98     0.11                             main
+  0.57      7.02     0.04  8388614     4.78     5.58  mlEnqueue
+  0.43      7.05     0.03 12624855     2.38     2.38  mtNewThread
+  0.28      7.07     0.02 16777216     1.20     1.20  mtDelThread
+  0.14      7.08     0.01 12624856     0.79     0.79  handleTNodeNullPointer
+  0.00      7.08     0.00        8     0.00     0.00  mlGetNumNodes
+  0.00      7.08     0.00        1     0.00     0.00  beginTest
+  0.00      7.08     0.00        1     0.00     0.00  endTest
+  0.00      7.08     0.00        1     0.00     0.00  handleMListNullPointer
+  0.00      7.08     0.00        1     0.00     0.79  mlNewList
+  0.00      7.08     0.00        1     0.00     0.00  shuffleIntArray
+
+			Call graph
+
+
+granularity: each sample hit covers 2 byte(s) for 0.14% of 7.08 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.11    6.97                 main [1]
+                6.74    0.03 8430551/8430551     mlSortIn [2]
+                0.13    0.00 16777216/16777216     mlDequeue [3]
+                0.03    0.00 12624855/12624855     mtNewThread [5]
+                0.02    0.00 4194304/8388614     mlEnqueue [4]
+                0.02    0.00 16777216/16777216     mtDelThread [6]
+                0.00    0.00       1/1           mlNewList [8]
+                0.00    0.00       8/8           mlGetNumNodes [9]
+                0.00    0.00       1/1           beginTest [10]
+                0.00    0.00       1/1           shuffleIntArray [13]
+                0.00    0.00       1/1           endTest [11]
+-----------------------------------------------
+                6.74    0.03 8430551/8430551     main [1]
+[2]     95.6    6.74    0.03 8430551         mlSortIn [2]
+                0.02    0.00 4194310/8388614     mlEnqueue [4]
+                0.00    0.00 4236241/12624856     handleTNodeNullPointer [7]
+-----------------------------------------------
+                0.13    0.00 16777216/16777216     main [1]
+[3]      1.8    0.13    0.00 16777216         mlDequeue [3]
+-----------------------------------------------
+                0.02    0.00 4194304/8388614     main [1]
+                0.02    0.00 4194310/8388614     mlSortIn [2]
+[4]      0.7    0.04    0.01 8388614         mlEnqueue [4]
+                0.01    0.00 8388614/12624856     handleTNodeNullPointer [7]
+-----------------------------------------------
+                0.03    0.00 12624855/12624855     main [1]
+[5]      0.4    0.03    0.00 12624855         mtNewThread [5]
+-----------------------------------------------
+                0.02    0.00 16777216/16777216     main [1]
+[6]      0.3    0.02    0.00 16777216         mtDelThread [6]
+-----------------------------------------------
+                0.00    0.00       1/12624856     mlNewList [8]
+                0.00    0.00 4236241/12624856     mlSortIn [2]
+                0.01    0.00 8388614/12624856     mlEnqueue [4]
+[7]      0.1    0.01    0.00 12624856         handleTNodeNullPointer [7]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[8]      0.0    0.00    0.00       1         mlNewList [8]
+                0.00    0.00       1/12624856     handleTNodeNullPointer [7]
+                0.00    0.00       1/1           handleMListNullPointer [12]
+-----------------------------------------------
+                0.00    0.00       8/8           main [1]
+[9]      0.0    0.00    0.00       8         mlGetNumNodes [9]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[10]     0.0    0.00    0.00       1         beginTest [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[11]     0.0    0.00    0.00       1         endTest [11]
+-----------------------------------------------
+                0.00    0.00       1/1           mlNewList [8]
+[12]     0.0    0.00    0.00       1         handleMListNullPointer [12]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[13]     0.0    0.00    0.00       1         shuffleIntArray [13]
+-----------------------------------------------
+
+Index by function name
+
+  [10] beginTest               [3] mlDequeue               [6] mtDelThread
+  [11] endTest                 [4] mlEnqueue               [5] mtNewThread
+  [12] handleMListNullPointer  [9] mlGetNumNodes          [13] shuffleIntArray
+   [7] handleTNodeNullPointer  [8] mlNewList
+   [1] main                    [2] mlSortIn
